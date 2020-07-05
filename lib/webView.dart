@@ -70,6 +70,15 @@ class AppLayout extends State<WebView> {
     }
   }
 
+  _launchURL8() async {
+    const url = 'https://evarsity.srmist.edu.in/srmsip/';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -180,6 +189,21 @@ class AppLayout extends State<WebView> {
             isThreeLine: true,
             onTap: () {
               _launchURL7();
+            },
+          ),
+        ),
+        Card(
+          child: ListTile(
+            leading: Icon(
+              Icons.info,
+              color: Colors.green,
+              size: 72.0,
+            ),
+            title: Text('SRM Student Information Portal'),
+            subtitle: Text('Student information portal for SRM students'),
+            isThreeLine: true,
+            onTap: () {
+              _launchURL8();
             },
           ),
         ),
