@@ -10,11 +10,17 @@ class GpaCalc extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
+      theme: ThemeData(
+        brightness: Brightness.light,
+      ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+      ),
       title: "SRM GPA Finder",
       home: Scaffold(
         appBar: AppBar(
           title: Text("SRM GPA Finder"),
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.orange,
         ),
         drawer: Drawer(
           child: ListView(
@@ -22,7 +28,7 @@ class GpaCalc extends StatelessWidget {
             children: <Widget>[
               DrawerHeader(
                 decoration: BoxDecoration(
-                  color: Colors.blue,
+                  color: Colors.orange,
                 ),
                 child: Text(
                   "SRM GPA Finder",
@@ -108,12 +114,10 @@ class _GradeCalculate extends State<Home> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Container(
-      padding: EdgeInsets.all(15.0),
-      color: Colors.white,
-      child: ListView(
+    return ListView(
         children: <Widget>[
-          Center(
+          Card(
+          child: Center(
             child: Text(
               "SGPA: " + result + "\n",
               style: TextStyle(
@@ -122,9 +126,9 @@ class _GradeCalculate extends State<Home> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-          ),
+          ),),
           RaisedButton(
-              color: Colors.blue,
+              color: Colors.orange,
               textColor: Colors.white,
               shape: RoundedRectangleBorder(
                 borderRadius: new BorderRadius.circular(18.0),
@@ -168,7 +172,6 @@ class _GradeCalculate extends State<Home> {
                     icon: Icon(Icons.arrow_drop_down),
                     iconSize: 25,
                     elevation: 16,
-                    style: TextStyle(color: Colors.black),
                     onChanged: (String newValue) {
                       setState(() {
                         dropdownValue1 = newValue;
@@ -229,7 +232,6 @@ class _GradeCalculate extends State<Home> {
                     icon: Icon(Icons.arrow_drop_down),
                     iconSize: 25,
                     elevation: 16,
-                    style: TextStyle(color: Colors.black),
                     onChanged: (String newValue) {
                       setState(() {
                         dropdownValue2 = newValue;
@@ -290,7 +292,6 @@ class _GradeCalculate extends State<Home> {
                     icon: Icon(Icons.arrow_drop_down),
                     iconSize: 25,
                     elevation: 16,
-                    style: TextStyle(color: Colors.black),
                     onChanged: (String newValue) {
                       setState(() {
                         dropdownValue3 = newValue;
@@ -351,7 +352,6 @@ class _GradeCalculate extends State<Home> {
                     icon: Icon(Icons.arrow_drop_down),
                     iconSize: 25,
                     elevation: 16,
-                    style: TextStyle(color: Colors.black),
                     onChanged: (String newValue) {
                       setState(() {
                         dropdownValue4 = newValue;
@@ -412,7 +412,6 @@ class _GradeCalculate extends State<Home> {
                     icon: Icon(Icons.arrow_drop_down),
                     iconSize: 25,
                     elevation: 16,
-                    style: TextStyle(color: Colors.black),
                     onChanged: (String newValue) {
                       setState(() {
                         dropdownValue5 = newValue;
@@ -473,7 +472,6 @@ class _GradeCalculate extends State<Home> {
                     icon: Icon(Icons.arrow_drop_down),
                     iconSize: 25,
                     elevation: 16,
-                    style: TextStyle(color: Colors.black),
                     onChanged: (String newValue) {
                       setState(() {
                         dropdownValue6 = newValue;
@@ -534,7 +532,6 @@ class _GradeCalculate extends State<Home> {
                     icon: Icon(Icons.arrow_drop_down),
                     iconSize: 25,
                     elevation: 16,
-                    style: TextStyle(color: Colors.black),
                     onChanged: (String newValue) {
                       setState(() {
                         dropdownValue7 = newValue;
@@ -595,7 +592,6 @@ class _GradeCalculate extends State<Home> {
                     icon: Icon(Icons.arrow_drop_down),
                     iconSize: 25,
                     elevation: 16,
-                    style: TextStyle(color: Colors.black),
                     onChanged: (String newValue) {
                       setState(() {
                         dropdownValue8 = newValue;
@@ -656,7 +652,6 @@ class _GradeCalculate extends State<Home> {
                     icon: Icon(Icons.arrow_drop_down),
                     iconSize: 25,
                     elevation: 16,
-                    style: TextStyle(color: Colors.black),
                     onChanged: (String newValue) {
                       setState(() {
                         dropdownValue9 = newValue;
@@ -717,7 +712,6 @@ class _GradeCalculate extends State<Home> {
                     icon: Icon(Icons.arrow_drop_down),
                     iconSize: 25,
                     elevation: 16,
-                    style: TextStyle(color: Colors.black),
                     onChanged: (String newValue) {
                       setState(() {
                         dropdownValue10 = newValue;
@@ -778,7 +772,6 @@ class _GradeCalculate extends State<Home> {
                     icon: Icon(Icons.arrow_drop_down),
                     iconSize: 25,
                     elevation: 16,
-                    style: TextStyle(color: Colors.black),
                     onChanged: (String newValue) {
                       setState(() {
                         dropdownValue11 = newValue;
@@ -808,8 +801,7 @@ class _GradeCalculate extends State<Home> {
             ],
           ),
         ],
-      ),
-    );
+      );
   }
 
   String calculate() {
@@ -877,6 +869,9 @@ class _GradeCalculate extends State<Home> {
     }
     sgpa = gpa / credit;
     output = sgpa.toStringAsFixed(2);
+
+    if(output=="NaN")
+      output= "0.00";
 
     return output;
   }
