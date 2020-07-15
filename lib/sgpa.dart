@@ -57,7 +57,7 @@ class _GradeCalculate extends State<Sgpa> {
               ),
               Padding(
                 padding: EdgeInsets.only(
-                  left: 40,
+                  left: 20,
                 ),
                 child: ButtonBar(
                   children: <Widget>[
@@ -71,7 +71,7 @@ class _GradeCalculate extends State<Sgpa> {
                         child: Text("RESET"),
                         onPressed: () {
                           setState(() {
-                            result = calculate();
+                            reset();
                           });
                         }),
                     RaisedButton(
@@ -864,5 +864,36 @@ class _GradeCalculate extends State<Sgpa> {
     if (output == "NaN") output = "0.00";
 
     return output;
+  }
+
+  void reset() {
+    dropdownValue1 = "Enter Grade";
+    dropdownValue2 = "Enter Grade";
+    dropdownValue3 = "Enter Grade";
+    dropdownValue4 = "Enter Grade";
+    dropdownValue5 = "Enter Grade";
+    dropdownValue6 = "Enter Grade";
+    dropdownValue7 = "Enter Grade";
+    dropdownValue8 = "Enter Grade";
+    dropdownValue9 = "Enter Grade";
+    dropdownValue10 = "Enter Grade";
+    dropdownValue11 = "Enter Grade";
+
+    credit1.text= "";
+    credit2.text= "";
+    credit3.text= "";
+    credit4.text= "";
+    credit5.text= "";
+    credit6.text= "";
+    credit7.text= "";
+    credit8.text= "";
+    credit9.text= "";
+    credit10.text= "";
+    credit11.text= "";
+
+    result = "0.00";
+
+
+
   }
 }
