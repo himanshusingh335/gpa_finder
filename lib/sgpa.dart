@@ -20,18 +20,18 @@ class _GradeCalculate extends State<Sgpa> {
   TextEditingController credit10 = TextEditingController();
   TextEditingController credit11 = TextEditingController();
 
-  String result = "";
-  String dropdownValue1 = "Enter Grade for subject";
-  String dropdownValue2 = "Enter Grade for subject";
-  String dropdownValue3 = "Enter Grade for subject";
-  String dropdownValue4 = "Enter Grade for subject";
-  String dropdownValue5 = "Enter Grade for subject";
-  String dropdownValue6 = "Enter Grade for subject";
-  String dropdownValue7 = "Enter Grade for subject";
-  String dropdownValue8 = "Enter Grade for subject";
-  String dropdownValue9 = "Enter Grade for subject";
-  String dropdownValue10 = "Enter Grade for subject";
-  String dropdownValue11 = "Enter Grade for subject";
+  String result = "0.00";
+  String dropdownValue1 = "Enter Grade";
+  String dropdownValue2 = "Enter Grade";
+  String dropdownValue3 = "Enter Grade";
+  String dropdownValue4 = "Enter Grade";
+  String dropdownValue5 = "Enter Grade";
+  String dropdownValue6 = "Enter Grade";
+  String dropdownValue7 = "Enter Grade";
+  String dropdownValue8 = "Enter Grade";
+  String dropdownValue9 = "Enter Grade";
+  String dropdownValue10 = "Enter Grade";
+  String dropdownValue11 = "Enter Grade";
 
   @override
   Widget build(BuildContext context) {
@@ -39,30 +39,60 @@ class _GradeCalculate extends State<Sgpa> {
     return Column(
       children: <Widget>[
         Card(
-          child: Center(
-            child: Text(
-              "SGPA: " + result + "\n",
-              style: TextStyle(
-                fontSize: 30,
-                color: Colors.red,
-                fontWeight: FontWeight.bold,
+          child: Row(
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.only(
+                  top: 35,
+                  left: 10,
+                ),
+                child: Text(
+                  "SGPA: " + result + "\n",
+                  style: TextStyle(
+                    fontSize: 30,
+                    color: Colors.orangeAccent,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
-            ),
+              Padding(
+                padding: EdgeInsets.only(
+                  left: 40,
+                ),
+                child: ButtonBar(
+                  children: <Widget>[
+                    RaisedButton(
+                        color: Colors.orange,
+                        textColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: new BorderRadius.circular(18.0),
+                        ),
+                        elevation: 5,
+                        child: Text("RESET"),
+                        onPressed: () {
+                          setState(() {
+                            result = calculate();
+                          });
+                        }),
+                    RaisedButton(
+                        color: Colors.orange,
+                        textColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: new BorderRadius.circular(18.0),
+                        ),
+                        elevation: 5,
+                        child: Text("CALCULATE"),
+                        onPressed: () {
+                          setState(() {
+                            result = calculate();
+                          });
+                        }),
+                  ],
+                ),
+              ),
+            ],
           ),
         ),
-        RaisedButton(
-            color: Colors.orange,
-            textColor: Colors.white,
-            shape: RoundedRectangleBorder(
-              borderRadius: new BorderRadius.circular(18.0),
-            ),
-            elevation: 5,
-            child: Text("Calculate"),
-            onPressed: () {
-              setState(() {
-                result = calculate();
-              });
-            }),
         Expanded(
           child: ListView(
             children: <Widget>[
@@ -74,6 +104,7 @@ class _GradeCalculate extends State<Sgpa> {
                         top: 5.0,
                         bottom: 5.0,
                         right: 10,
+                        left: 5,
                       ),
                       child: TextField(
                         controller: credit1,
@@ -92,6 +123,8 @@ class _GradeCalculate extends State<Sgpa> {
                       padding: EdgeInsets.only(
                         top: 5.0,
                         bottom: 5.0,
+                        right: 10,
+                        left: 5,
                       ),
                       child: DropdownButton<String>(
                         value: dropdownValue1,
@@ -104,7 +137,7 @@ class _GradeCalculate extends State<Sgpa> {
                           });
                         },
                         items: <String>[
-                          "Enter Grade for subject",
+                          "Enter Grade",
                           "O",
                           "A+",
                           "A",
@@ -134,6 +167,7 @@ class _GradeCalculate extends State<Sgpa> {
                         top: 5.0,
                         bottom: 5.0,
                         right: 10,
+                        left: 5,
                       ),
                       child: TextField(
                         controller: credit2,
@@ -152,6 +186,8 @@ class _GradeCalculate extends State<Sgpa> {
                       padding: EdgeInsets.only(
                         top: 5.0,
                         bottom: 5.0,
+                        right: 10,
+                        left: 5,
                       ),
                       child: DropdownButton<String>(
                         value: dropdownValue2,
@@ -164,7 +200,7 @@ class _GradeCalculate extends State<Sgpa> {
                           });
                         },
                         items: <String>[
-                          "Enter Grade for subject",
+                          "Enter Grade",
                           "O",
                           "A+",
                           "A",
@@ -194,6 +230,7 @@ class _GradeCalculate extends State<Sgpa> {
                         top: 5.0,
                         bottom: 5.0,
                         right: 10,
+                        left: 5,
                       ),
                       child: TextField(
                         controller: credit3,
@@ -212,6 +249,8 @@ class _GradeCalculate extends State<Sgpa> {
                       padding: EdgeInsets.only(
                         top: 5.0,
                         bottom: 5.0,
+                        right: 10,
+                        left: 5,
                       ),
                       child: DropdownButton<String>(
                         value: dropdownValue3,
@@ -224,7 +263,7 @@ class _GradeCalculate extends State<Sgpa> {
                           });
                         },
                         items: <String>[
-                          "Enter Grade for subject",
+                          "Enter Grade",
                           "O",
                           "A+",
                           "A",
@@ -254,6 +293,7 @@ class _GradeCalculate extends State<Sgpa> {
                         top: 5.0,
                         bottom: 5.0,
                         right: 10,
+                        left: 5,
                       ),
                       child: TextField(
                         controller: credit4,
@@ -272,6 +312,8 @@ class _GradeCalculate extends State<Sgpa> {
                       padding: EdgeInsets.only(
                         top: 5.0,
                         bottom: 5.0,
+                        right: 10,
+                        left: 5,
                       ),
                       child: DropdownButton<String>(
                         value: dropdownValue4,
@@ -284,7 +326,7 @@ class _GradeCalculate extends State<Sgpa> {
                           });
                         },
                         items: <String>[
-                          "Enter Grade for subject",
+                          "Enter Grade",
                           "O",
                           "A+",
                           "A",
@@ -314,6 +356,7 @@ class _GradeCalculate extends State<Sgpa> {
                         top: 5.0,
                         bottom: 5.0,
                         right: 10,
+                        left: 5,
                       ),
                       child: TextField(
                         controller: credit5,
@@ -332,6 +375,8 @@ class _GradeCalculate extends State<Sgpa> {
                       padding: EdgeInsets.only(
                         top: 5.0,
                         bottom: 5.0,
+                        right: 10,
+                        left: 5,
                       ),
                       child: DropdownButton<String>(
                         value: dropdownValue5,
@@ -344,7 +389,7 @@ class _GradeCalculate extends State<Sgpa> {
                           });
                         },
                         items: <String>[
-                          "Enter Grade for subject",
+                          "Enter Grade",
                           "O",
                           "A+",
                           "A",
@@ -374,6 +419,7 @@ class _GradeCalculate extends State<Sgpa> {
                         top: 5.0,
                         bottom: 5.0,
                         right: 10,
+                        left: 5,
                       ),
                       child: TextField(
                         controller: credit6,
@@ -392,6 +438,8 @@ class _GradeCalculate extends State<Sgpa> {
                       padding: EdgeInsets.only(
                         top: 5.0,
                         bottom: 5.0,
+                        right: 10,
+                        left: 5,
                       ),
                       child: DropdownButton<String>(
                         value: dropdownValue6,
@@ -404,7 +452,7 @@ class _GradeCalculate extends State<Sgpa> {
                           });
                         },
                         items: <String>[
-                          "Enter Grade for subject",
+                          "Enter Grade",
                           "O",
                           "A+",
                           "A",
@@ -434,6 +482,7 @@ class _GradeCalculate extends State<Sgpa> {
                         top: 5.0,
                         bottom: 5.0,
                         right: 10,
+                        left: 5,
                       ),
                       child: TextField(
                         controller: credit7,
@@ -452,6 +501,8 @@ class _GradeCalculate extends State<Sgpa> {
                       padding: EdgeInsets.only(
                         top: 5.0,
                         bottom: 5.0,
+                        right: 10,
+                        left: 5,
                       ),
                       child: DropdownButton<String>(
                         value: dropdownValue7,
@@ -464,7 +515,7 @@ class _GradeCalculate extends State<Sgpa> {
                           });
                         },
                         items: <String>[
-                          "Enter Grade for subject",
+                          "Enter Grade",
                           "O",
                           "A+",
                           "A",
@@ -494,6 +545,7 @@ class _GradeCalculate extends State<Sgpa> {
                         top: 5.0,
                         bottom: 5.0,
                         right: 10,
+                        left: 5,
                       ),
                       child: TextField(
                         controller: credit8,
@@ -512,6 +564,8 @@ class _GradeCalculate extends State<Sgpa> {
                       padding: EdgeInsets.only(
                         top: 5.0,
                         bottom: 5.0,
+                        right: 10,
+                        left: 5,
                       ),
                       child: DropdownButton<String>(
                         value: dropdownValue8,
@@ -524,7 +578,7 @@ class _GradeCalculate extends State<Sgpa> {
                           });
                         },
                         items: <String>[
-                          "Enter Grade for subject",
+                          "Enter Grade",
                           "O",
                           "A+",
                           "A",
@@ -554,6 +608,7 @@ class _GradeCalculate extends State<Sgpa> {
                         top: 5.0,
                         bottom: 5.0,
                         right: 10,
+                        left: 5,
                       ),
                       child: TextField(
                         controller: credit9,
@@ -572,6 +627,8 @@ class _GradeCalculate extends State<Sgpa> {
                       padding: EdgeInsets.only(
                         top: 5.0,
                         bottom: 5.0,
+                        right: 10,
+                        left: 5,
                       ),
                       child: DropdownButton<String>(
                         value: dropdownValue9,
@@ -584,7 +641,7 @@ class _GradeCalculate extends State<Sgpa> {
                           });
                         },
                         items: <String>[
-                          "Enter Grade for subject",
+                          "Enter Grade",
                           "O",
                           "A+",
                           "A",
@@ -614,6 +671,7 @@ class _GradeCalculate extends State<Sgpa> {
                         top: 5.0,
                         bottom: 5.0,
                         right: 10,
+                        left: 5,
                       ),
                       child: TextField(
                         controller: credit10,
@@ -632,6 +690,8 @@ class _GradeCalculate extends State<Sgpa> {
                       padding: EdgeInsets.only(
                         top: 5.0,
                         bottom: 5.0,
+                        right: 10,
+                        left: 5,
                       ),
                       child: DropdownButton<String>(
                         value: dropdownValue10,
@@ -644,7 +704,7 @@ class _GradeCalculate extends State<Sgpa> {
                           });
                         },
                         items: <String>[
-                          "Enter Grade for subject",
+                          "Enter Grade",
                           "O",
                           "A+",
                           "A",
@@ -674,6 +734,7 @@ class _GradeCalculate extends State<Sgpa> {
                         top: 5.0,
                         bottom: 5.0,
                         right: 10,
+                        left: 5,
                       ),
                       child: TextField(
                         controller: credit11,
@@ -692,6 +753,8 @@ class _GradeCalculate extends State<Sgpa> {
                       padding: EdgeInsets.only(
                         top: 5.0,
                         bottom: 5.0,
+                        right: 10,
+                        left: 5,
                       ),
                       child: DropdownButton<String>(
                         value: dropdownValue11,
@@ -704,7 +767,7 @@ class _GradeCalculate extends State<Sgpa> {
                           });
                         },
                         items: <String>[
-                          "Enter Grade for subject",
+                          "Enter Grade",
                           "O",
                           "A+",
                           "A",
@@ -760,9 +823,7 @@ class _GradeCalculate extends State<Sgpa> {
     creditof[9] = int.parse((credit10.text.length == 0) ? "0" : credit10.text);
     creditof[10] = int.parse((credit11.text.length == 0) ? "0" : credit11.text);
     String output = "";
-    double sgpa,
-        gpa = 0,
-        credit = 0;
+    double sgpa, gpa = 0, credit = 0;
 
     for (int i = 0; i < 11; i++) {
       if (gradeof[i] == "O")
@@ -785,7 +846,7 @@ class _GradeCalculate extends State<Sgpa> {
         gpoint[i] = 0;
       else if (gradeof[i] == "F")
         gpoint[i] = 0;
-      else if (gradeof[i] == "Enter Grade for subject")
+      else if (gradeof[i] == "Enter Grade")
         gpoint[i] = 0;
       else
         gpoint[i] = 0;
