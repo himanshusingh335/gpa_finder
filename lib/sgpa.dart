@@ -96,700 +96,85 @@ class _GradeCalculate extends State<Sgpa> {
         Expanded(
           child: ListView(
             children: <Widget>[
-              Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                        top: 5.0,
-                        bottom: 5.0,
-                        right: 10,
-                        left: 5,
-                      ),
-                      child: TextField(
-                        controller: credit1,
-                        decoration: InputDecoration(
-                          hintText: "Credit",
-                          labelText: 'Subject-1',
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(5.0)),
-                        ),
-                        keyboardType: TextInputType.number,
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                        top: 5.0,
-                        bottom: 5.0,
-                        right: 10,
-                        left: 5,
-                      ),
-                      child: DropdownButton<String>(
-                        value: dropdownValue1,
-                        icon: Icon(Icons.arrow_drop_down),
-                        iconSize: 25,
-                        elevation: 16,
-                        onChanged: (String newValue) {
-                          setState(() {
-                            dropdownValue1 = newValue;
-                          });
-                        },
-                        items: <String>[
-                          "Enter Grade",
-                          "O",
-                          "A+",
-                          "A",
-                          "B+",
-                          "B",
-                          "C",
-                          "P",
-                          "F",
-                          "Ab",
-                          "I",
-                        ].map<DropdownMenuItem<String>>((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(value),
-                          );
-                        }).toList(),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                        top: 5.0,
-                        bottom: 5.0,
-                        right: 10,
-                        left: 5,
-                      ),
-                      child: TextField(
-                        controller: credit2,
-                        decoration: InputDecoration(
-                          hintText: "Credit",
-                          labelText: 'Subject-2',
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(5.0)),
-                        ),
-                        keyboardType: TextInputType.number,
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                        top: 5.0,
-                        bottom: 5.0,
-                        right: 10,
-                        left: 5,
-                      ),
-                      child: DropdownButton<String>(
-                        value: dropdownValue2,
-                        icon: Icon(Icons.arrow_drop_down),
-                        iconSize: 25,
-                        elevation: 16,
-                        onChanged: (String newValue) {
-                          setState(() {
-                            dropdownValue2 = newValue;
-                          });
-                        },
-                        items: <String>[
-                          "Enter Grade",
-                          "O",
-                          "A+",
-                          "A",
-                          "B+",
-                          "B",
-                          "C",
-                          "P",
-                          "F",
-                          "Ab",
-                          "I",
-                        ].map<DropdownMenuItem<String>>((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(value),
-                          );
-                        }).toList(),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                        top: 5.0,
-                        bottom: 5.0,
-                        right: 10,
-                        left: 5,
-                      ),
-                      child: TextField(
-                        controller: credit3,
-                        decoration: InputDecoration(
-                          hintText: "Credit",
-                          labelText: 'Subject-3',
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(5.0)),
-                        ),
-                        keyboardType: TextInputType.number,
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                        top: 5.0,
-                        bottom: 5.0,
-                        right: 10,
-                        left: 5,
-                      ),
-                      child: DropdownButton<String>(
-                        value: dropdownValue3,
-                        icon: Icon(Icons.arrow_drop_down),
-                        iconSize: 25,
-                        elevation: 16,
-                        onChanged: (String newValue) {
-                          setState(() {
-                            dropdownValue3 = newValue;
-                          });
-                        },
-                        items: <String>[
-                          "Enter Grade",
-                          "O",
-                          "A+",
-                          "A",
-                          "B+",
-                          "B",
-                          "C",
-                          "P",
-                          "F",
-                          "Ab",
-                          "I",
-                        ].map<DropdownMenuItem<String>>((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(value),
-                          );
-                        }).toList(),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                        top: 5.0,
-                        bottom: 5.0,
-                        right: 10,
-                        left: 5,
-                      ),
-                      child: TextField(
-                        controller: credit4,
-                        decoration: InputDecoration(
-                          hintText: "Credit",
-                          labelText: 'Subject-4',
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(5.0)),
-                        ),
-                        keyboardType: TextInputType.number,
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                        top: 5.0,
-                        bottom: 5.0,
-                        right: 10,
-                        left: 5,
-                      ),
-                      child: DropdownButton<String>(
-                        value: dropdownValue4,
-                        icon: Icon(Icons.arrow_drop_down),
-                        iconSize: 25,
-                        elevation: 16,
-                        onChanged: (String newValue) {
-                          setState(() {
-                            dropdownValue4 = newValue;
-                          });
-                        },
-                        items: <String>[
-                          "Enter Grade",
-                          "O",
-                          "A+",
-                          "A",
-                          "B+",
-                          "B",
-                          "C",
-                          "P",
-                          "F",
-                          "Ab",
-                          "I",
-                        ].map<DropdownMenuItem<String>>((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(value),
-                          );
-                        }).toList(),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                        top: 5.0,
-                        bottom: 5.0,
-                        right: 10,
-                        left: 5,
-                      ),
-                      child: TextField(
-                        controller: credit5,
-                        decoration: InputDecoration(
-                          hintText: "Credit",
-                          labelText: 'Subject-5',
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(5.0)),
-                        ),
-                        keyboardType: TextInputType.number,
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                        top: 5.0,
-                        bottom: 5.0,
-                        right: 10,
-                        left: 5,
-                      ),
-                      child: DropdownButton<String>(
-                        value: dropdownValue5,
-                        icon: Icon(Icons.arrow_drop_down),
-                        iconSize: 25,
-                        elevation: 16,
-                        onChanged: (String newValue) {
-                          setState(() {
-                            dropdownValue5 = newValue;
-                          });
-                        },
-                        items: <String>[
-                          "Enter Grade",
-                          "O",
-                          "A+",
-                          "A",
-                          "B+",
-                          "B",
-                          "C",
-                          "P",
-                          "F",
-                          "Ab",
-                          "I",
-                        ].map<DropdownMenuItem<String>>((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(value),
-                          );
-                        }).toList(),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                        top: 5.0,
-                        bottom: 5.0,
-                        right: 10,
-                        left: 5,
-                      ),
-                      child: TextField(
-                        controller: credit6,
-                        decoration: InputDecoration(
-                          hintText: "Credit",
-                          labelText: 'Subject-6',
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(5.0)),
-                        ),
-                        keyboardType: TextInputType.number,
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                        top: 5.0,
-                        bottom: 5.0,
-                        right: 10,
-                        left: 5,
-                      ),
-                      child: DropdownButton<String>(
-                        value: dropdownValue6,
-                        icon: Icon(Icons.arrow_drop_down),
-                        iconSize: 25,
-                        elevation: 16,
-                        onChanged: (String newValue) {
-                          setState(() {
-                            dropdownValue6 = newValue;
-                          });
-                        },
-                        items: <String>[
-                          "Enter Grade",
-                          "O",
-                          "A+",
-                          "A",
-                          "B+",
-                          "B",
-                          "C",
-                          "P",
-                          "F",
-                          "Ab",
-                          "I",
-                        ].map<DropdownMenuItem<String>>((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(value),
-                          );
-                        }).toList(),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                        top: 5.0,
-                        bottom: 5.0,
-                        right: 10,
-                        left: 5,
-                      ),
-                      child: TextField(
-                        controller: credit7,
-                        decoration: InputDecoration(
-                          hintText: "Credit",
-                          labelText: 'Subject-7',
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(5.0)),
-                        ),
-                        keyboardType: TextInputType.number,
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                        top: 5.0,
-                        bottom: 5.0,
-                        right: 10,
-                        left: 5,
-                      ),
-                      child: DropdownButton<String>(
-                        value: dropdownValue7,
-                        icon: Icon(Icons.arrow_drop_down),
-                        iconSize: 25,
-                        elevation: 16,
-                        onChanged: (String newValue) {
-                          setState(() {
-                            dropdownValue7 = newValue;
-                          });
-                        },
-                        items: <String>[
-                          "Enter Grade",
-                          "O",
-                          "A+",
-                          "A",
-                          "B+",
-                          "B",
-                          "C",
-                          "P",
-                          "F",
-                          "Ab",
-                          "I",
-                        ].map<DropdownMenuItem<String>>((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(value),
-                          );
-                        }).toList(),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                        top: 5.0,
-                        bottom: 5.0,
-                        right: 10,
-                        left: 5,
-                      ),
-                      child: TextField(
-                        controller: credit8,
-                        decoration: InputDecoration(
-                          hintText: "Credit",
-                          labelText: 'Subject-8',
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(5.0)),
-                        ),
-                        keyboardType: TextInputType.number,
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                        top: 5.0,
-                        bottom: 5.0,
-                        right: 10,
-                        left: 5,
-                      ),
-                      child: DropdownButton<String>(
-                        value: dropdownValue8,
-                        icon: Icon(Icons.arrow_drop_down),
-                        iconSize: 25,
-                        elevation: 16,
-                        onChanged: (String newValue) {
-                          setState(() {
-                            dropdownValue8 = newValue;
-                          });
-                        },
-                        items: <String>[
-                          "Enter Grade",
-                          "O",
-                          "A+",
-                          "A",
-                          "B+",
-                          "B",
-                          "C",
-                          "P",
-                          "F",
-                          "Ab",
-                          "I",
-                        ].map<DropdownMenuItem<String>>((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(value),
-                          );
-                        }).toList(),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                        top: 5.0,
-                        bottom: 5.0,
-                        right: 10,
-                        left: 5,
-                      ),
-                      child: TextField(
-                        controller: credit9,
-                        decoration: InputDecoration(
-                          hintText: "Credit",
-                          labelText: 'Subject-9',
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(5.0)),
-                        ),
-                        keyboardType: TextInputType.number,
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                        top: 5.0,
-                        bottom: 5.0,
-                        right: 10,
-                        left: 5,
-                      ),
-                      child: DropdownButton<String>(
-                        value: dropdownValue9,
-                        icon: Icon(Icons.arrow_drop_down),
-                        iconSize: 25,
-                        elevation: 16,
-                        onChanged: (String newValue) {
-                          setState(() {
-                            dropdownValue9 = newValue;
-                          });
-                        },
-                        items: <String>[
-                          "Enter Grade",
-                          "O",
-                          "A+",
-                          "A",
-                          "B+",
-                          "B",
-                          "C",
-                          "P",
-                          "F",
-                          "Ab",
-                          "I",
-                        ].map<DropdownMenuItem<String>>((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(value),
-                          );
-                        }).toList(),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                        top: 5.0,
-                        bottom: 5.0,
-                        right: 10,
-                        left: 5,
-                      ),
-                      child: TextField(
-                        controller: credit10,
-                        decoration: InputDecoration(
-                          hintText: "Credit",
-                          labelText: 'Subject-10',
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(5.0)),
-                        ),
-                        keyboardType: TextInputType.number,
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                        top: 5.0,
-                        bottom: 5.0,
-                        right: 10,
-                        left: 5,
-                      ),
-                      child: DropdownButton<String>(
-                        value: dropdownValue10,
-                        icon: Icon(Icons.arrow_drop_down),
-                        iconSize: 25,
-                        elevation: 16,
-                        onChanged: (String newValue) {
-                          setState(() {
-                            dropdownValue10 = newValue;
-                          });
-                        },
-                        items: <String>[
-                          "Enter Grade",
-                          "O",
-                          "A+",
-                          "A",
-                          "B+",
-                          "B",
-                          "C",
-                          "P",
-                          "F",
-                          "Ab",
-                          "I",
-                        ].map<DropdownMenuItem<String>>((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(value),
-                          );
-                        }).toList(),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                        top: 5.0,
-                        bottom: 5.0,
-                        right: 10,
-                        left: 5,
-                      ),
-                      child: TextField(
-                        controller: credit11,
-                        decoration: InputDecoration(
-                          hintText: "Credit",
-                          labelText: 'Subject-11',
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(5.0)),
-                        ),
-                        keyboardType: TextInputType.number,
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                        top: 5.0,
-                        bottom: 5.0,
-                        right: 10,
-                        left: 5,
-                      ),
-                      child: DropdownButton<String>(
-                        value: dropdownValue11,
-                        icon: Icon(Icons.arrow_drop_down),
-                        iconSize: 25,
-                        elevation: 16,
-                        onChanged: (String newValue) {
-                          setState(() {
-                            dropdownValue11 = newValue;
-                          });
-                        },
-                        items: <String>[
-                          "Enter Grade",
-                          "O",
-                          "A+",
-                          "A",
-                          "B+",
-                          "B",
-                          "C",
-                          "P",
-                          "F",
-                          "Ab",
-                          "I",
-                        ].map<DropdownMenuItem<String>>((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(value),
-                          );
-                        }).toList(),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+              makeApp(credit1,dropdownValue1),
+              makeApp(credit2,dropdownValue2),
+              makeApp(credit3,dropdownValue3),
+              makeApp(credit4,dropdownValue4),
+              makeApp(credit5,dropdownValue5),
+              makeApp(credit6,dropdownValue6),
+              makeApp(credit7,dropdownValue7),
+              makeApp(credit8,dropdownValue8),
+              makeApp(credit9,dropdownValue9),
+              makeApp(credit10,dropdownValue10),
+              makeApp(credit11,dropdownValue11),
             ],
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget makeApp(TextEditingController credit, String dropdownvalue)
+  {
+    return Row(
+      children: <Widget>[
+        Expanded(
+          child: Padding(
+            padding: EdgeInsets.only(
+              top: 5.0,
+              bottom: 5.0,
+              right: 10,
+              left: 5,
+            ),
+            child: TextField(
+              controller: credit,
+              decoration: InputDecoration(
+                hintText: "Credit",
+                labelText: 'Subject credit',
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(5.0)),
+              ),
+              keyboardType: TextInputType.number,
+            ),
+          ),
+        ),
+        Expanded(
+          child: Padding(
+            padding: EdgeInsets.only(
+              top: 5.0,
+              bottom: 5.0,
+              right: 10,
+              left: 5,
+            ),
+            child: DropdownButton<String>(
+              value: dropdownvalue,
+              icon: Icon(Icons.arrow_drop_down),
+              iconSize: 25,
+              elevation: 16,
+              onChanged: (String newValue) {
+                setState(() {
+                  dropdownvalue = newValue;
+                });
+              },
+              items: <String>[
+                "Enter Grade",
+                "O",
+                "A+",
+                "A",
+                "B+",
+                "B",
+                "C",
+                "P",
+                "F",
+                "Ab",
+                "I",
+              ].map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+            ),
           ),
         ),
       ],
