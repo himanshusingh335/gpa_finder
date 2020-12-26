@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'class_gpa.dart';
 
 class Sgpa extends StatefulWidget {
   @override
@@ -8,34 +9,22 @@ class Sgpa extends StatefulWidget {
 }
 
 class _GradeCalculate extends State<Sgpa> {
-  TextEditingController credit1 = TextEditingController();
-  TextEditingController credit2 = TextEditingController();
-  TextEditingController credit3 = TextEditingController();
-  TextEditingController credit4 = TextEditingController();
-  TextEditingController credit5 = TextEditingController();
-  TextEditingController credit6 = TextEditingController();
-  TextEditingController credit7 = TextEditingController();
-  TextEditingController credit8 = TextEditingController();
-  TextEditingController credit9 = TextEditingController();
-  TextEditingController credit10 = TextEditingController();
-  TextEditingController credit11 = TextEditingController();
-
-  String result = "0.00";
-  String dropdownValue1 = "Enter Grade";
-  String dropdownValue2 = "Enter Grade";
-  String dropdownValue3 = "Enter Grade";
-  String dropdownValue4 = "Enter Grade";
-  String dropdownValue5 = "Enter Grade";
-  String dropdownValue6 = "Enter Grade";
-  String dropdownValue7 = "Enter Grade";
-  String dropdownValue8 = "Enter Grade";
-  String dropdownValue9 = "Enter Grade";
-  String dropdownValue10 = "Enter Grade";
-  String dropdownValue11 = "Enter Grade";
+  String result = "0.0";
+  var sub1 = Gpa();
+  var sub2 = Gpa();
+  var sub3 = Gpa();
+  var sub4 = Gpa();
+  var sub5 = Gpa();
+  var sub6 = Gpa();
+  var sub7 = Gpa();
+  var sub8 = Gpa();
+  var sub9 = Gpa();
+  var sub10 = Gpa();
+  var sub11 = Gpa();
+  //String selectGrade;
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Column(
       children: <Widget>[
         Card(
@@ -96,17 +85,17 @@ class _GradeCalculate extends State<Sgpa> {
         Expanded(
           child: ListView(
             children: <Widget>[
-              makeApp(credit1,dropdownValue1),
-              makeApp(credit2,dropdownValue2),
-              makeApp(credit3,dropdownValue3),
-              makeApp(credit4,dropdownValue4),
-              makeApp(credit5,dropdownValue5),
-              makeApp(credit6,dropdownValue6),
-              makeApp(credit7,dropdownValue7),
-              makeApp(credit8,dropdownValue8),
-              makeApp(credit9,dropdownValue9),
-              makeApp(credit10,dropdownValue10),
-              makeApp(credit11,dropdownValue11),
+              makeApp(sub1),
+              makeApp(sub2),
+              makeApp(sub3),
+              makeApp(sub4),
+              makeApp(sub5),
+              makeApp(sub6),
+              makeApp(sub7),
+              makeApp(sub8),
+              makeApp(sub9),
+              makeApp(sub10),
+              makeApp(sub11),
             ],
           ),
         ),
@@ -114,8 +103,7 @@ class _GradeCalculate extends State<Sgpa> {
     );
   }
 
-  Widget makeApp(TextEditingController credit, String dropdownvalue)
-  {
+  Widget makeApp(Gpa gpa) {
     return Row(
       children: <Widget>[
         Expanded(
@@ -127,7 +115,7 @@ class _GradeCalculate extends State<Sgpa> {
               left: 5,
             ),
             child: TextField(
-              controller: credit,
+              controller: gpa.credit,
               decoration: InputDecoration(
                 hintText: "Credit",
                 labelText: 'Subject credit',
@@ -147,13 +135,13 @@ class _GradeCalculate extends State<Sgpa> {
               left: 5,
             ),
             child: DropdownButton<String>(
-              value: dropdownvalue,
+              value: gpa.gradeSelected,
               icon: Icon(Icons.arrow_drop_down),
               iconSize: 25,
               elevation: 16,
               onChanged: (String newValue) {
                 setState(() {
-                  dropdownvalue = newValue;
+                  gpa.gradeSelected = newValue;
                 });
               },
               items: <String>[
@@ -181,32 +169,49 @@ class _GradeCalculate extends State<Sgpa> {
     );
   }
 
+  void reset() {
+    result = "0.00";
+  }
+
   String calculate() {
     var gradeof = new List(11);
     var creditof = new List(11);
     var gpoint = new List(11);
-    gradeof[0] = dropdownValue1;
-    gradeof[1] = dropdownValue2;
-    gradeof[2] = dropdownValue3;
-    gradeof[3] = dropdownValue4;
-    gradeof[4] = dropdownValue5;
-    gradeof[5] = dropdownValue6;
-    gradeof[6] = dropdownValue7;
-    gradeof[7] = dropdownValue8;
-    gradeof[8] = dropdownValue9;
-    gradeof[9] = dropdownValue10;
-    gradeof[10] = dropdownValue11;
-    creditof[0] = int.parse((credit1.text.length == 0) ? "0" : credit1.text);
-    creditof[1] = int.parse((credit2.text.length == 0) ? "0" : credit2.text);
-    creditof[2] = int.parse((credit3.text.length == 0) ? "0" : credit3.text);
-    creditof[3] = int.parse((credit4.text.length == 0) ? "0" : credit4.text);
-    creditof[4] = int.parse((credit5.text.length == 0) ? "0" : credit5.text);
-    creditof[5] = int.parse((credit6.text.length == 0) ? "0" : credit6.text);
-    creditof[6] = int.parse((credit7.text.length == 0) ? "0" : credit7.text);
-    creditof[7] = int.parse((credit8.text.length == 0) ? "0" : credit8.text);
-    creditof[8] = int.parse((credit9.text.length == 0) ? "0" : credit9.text);
-    creditof[9] = int.parse((credit10.text.length == 0) ? "0" : credit10.text);
-    creditof[10] = int.parse((credit11.text.length == 0) ? "0" : credit11.text);
+    gradeof[0] = sub1.gradeSelected;
+    gradeof[1] = sub2.gradeSelected;
+    gradeof[2] = sub3.gradeSelected;
+    gradeof[3] = sub4.gradeSelected;
+    gradeof[4] = sub5.gradeSelected;
+    gradeof[5] = sub6.gradeSelected;
+    gradeof[6] = sub7.gradeSelected;
+    gradeof[7] = sub8.gradeSelected;
+    gradeof[8] = sub9.gradeSelected;
+    gradeof[9] = sub10.gradeSelected;
+    gradeof[10] = sub11.gradeSelected;
+
+    creditof[0] =
+        int.parse((sub1.credit.text.length == 0) ? "0" : sub1.credit.text);
+    creditof[1] =
+        int.parse((sub2.credit.text.length == 0) ? "0" : sub2.credit.text);
+    creditof[2] =
+        int.parse((sub3.credit.text.length == 0) ? "0" : sub3.credit.text);
+    creditof[3] =
+        int.parse((sub4.credit.text.length == 0) ? "0" : sub4.credit.text);
+    creditof[4] =
+        int.parse((sub5.credit.text.length == 0) ? "0" : sub5.credit.text);
+    creditof[5] =
+        int.parse((sub6.credit.text.length == 0) ? "0" : sub6.credit.text);
+    creditof[6] =
+        int.parse((sub7.credit.text.length == 0) ? "0" : sub7.credit.text);
+    creditof[7] =
+        int.parse((sub8.credit.text.length == 0) ? "0" : sub8.credit.text);
+    creditof[8] =
+        int.parse((sub9.credit.text.length == 0) ? "0" : sub9.credit.text);
+    creditof[9] =
+        int.parse((sub10.credit.text.length == 0) ? "0" : sub10.credit.text);
+    creditof[10] =
+        int.parse((sub11.credit.text.length == 0) ? "0" : sub11.credit.text);
+
     String output = "";
     double sgpa, gpa = 0, credit = 0;
 
@@ -249,36 +254,5 @@ class _GradeCalculate extends State<Sgpa> {
     if (output == "NaN") output = "0.00";
 
     return output;
-  }
-
-  void reset() {
-    dropdownValue1 = "Enter Grade";
-    dropdownValue2 = "Enter Grade";
-    dropdownValue3 = "Enter Grade";
-    dropdownValue4 = "Enter Grade";
-    dropdownValue5 = "Enter Grade";
-    dropdownValue6 = "Enter Grade";
-    dropdownValue7 = "Enter Grade";
-    dropdownValue8 = "Enter Grade";
-    dropdownValue9 = "Enter Grade";
-    dropdownValue10 = "Enter Grade";
-    dropdownValue11 = "Enter Grade";
-
-    credit1.text= "";
-    credit2.text= "";
-    credit3.text= "";
-    credit4.text= "";
-    credit5.text= "";
-    credit6.text= "";
-    credit7.text= "";
-    credit8.text= "";
-    credit9.text= "";
-    credit10.text= "";
-    credit11.text= "";
-
-    result = "0.00";
-
-
-
   }
 }
