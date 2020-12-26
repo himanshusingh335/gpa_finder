@@ -21,7 +21,6 @@ class _GradeCalculate extends State<Sgpa> {
   var sub9 = Gpa();
   var sub10 = Gpa();
   var sub11 = Gpa();
-  //String selectGrade;
 
   @override
   Widget build(BuildContext context) {
@@ -170,6 +169,18 @@ class _GradeCalculate extends State<Sgpa> {
   }
 
   void reset() {
+    sub1.resetEachGrade();
+    sub2.resetEachGrade();
+    sub3.resetEachGrade();
+    sub4.resetEachGrade();
+    sub5.resetEachGrade();
+    sub6.resetEachGrade();
+    sub7.resetEachGrade();
+    sub8.resetEachGrade();
+    sub9.resetEachGrade();
+    sub10.resetEachGrade();
+    sub11.resetEachGrade();
+
     result = "0.00";
   }
 
