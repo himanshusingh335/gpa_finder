@@ -4,12 +4,12 @@ import 'class_gpa.dart';
 class Sgpa extends StatefulWidget {
   @override
   createState() {
-    return _GradeCalculate();
+    return _Sgpa();
   }
 }
 
-class _GradeCalculate extends State<Sgpa> {
-  String result = "0.0";
+class _Sgpa extends State<Sgpa> {
+  String result = "0.00";
   var sub1 = Gpa();
   var sub2 = Gpa();
   var sub3 = Gpa();

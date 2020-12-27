@@ -8,17 +8,15 @@ void main() {
 }
 
 class GpaCalc extends StatefulWidget {
-
   @override
   createState() {
-    return _BaseUI();
+    return _GpaCalc();
   }
 }
 
-class _BaseUI extends State<GpaCalc> {
-
+class _GpaCalc extends State<GpaCalc> {
   int _selectedIndex = 0;
-   List<Widget> _widgetOptions = <Widget>[
+  List<Widget> _widgetOptions = <Widget>[
     Sgpa(),
     WebView(),
   ];
@@ -77,23 +75,24 @@ class _BaseUI extends State<GpaCalc> {
             ],
           ),
         ),
-        body:_widgetOptions.elementAt(_selectedIndex),
-
+        body: _widgetOptions.elementAt(_selectedIndex),
         bottomNavigationBar: BottomNavigationBar(
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.receipt),
-              title: Text(' SGPA Calculator'),
+              label: ' SGPA Calculator',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.link),
-              title: Text('SRM Links'),
+              label: 'SRM Links',
             ),
           ],
           currentIndex: _selectedIndex,
           selectedItemColor: Colors.amber[800],
           onTap: _onItemTapped,
-        ),),);
+        ),
+      ),
+    );
   }
 
   _launchURL() async {
@@ -115,4 +114,3 @@ class _BaseUI extends State<GpaCalc> {
     }
   }
 }
-
