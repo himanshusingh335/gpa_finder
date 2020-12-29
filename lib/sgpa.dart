@@ -10,17 +10,17 @@ class Sgpa extends StatefulWidget {
 
 class _Sgpa extends State<Sgpa> {
   String result = "0.00";
-  var sub1 = Gpa();
-  var sub2 = Gpa();
-  var sub3 = Gpa();
-  var sub4 = Gpa();
-  var sub5 = Gpa();
-  var sub6 = Gpa();
-  var sub7 = Gpa();
-  var sub8 = Gpa();
-  var sub9 = Gpa();
-  var sub10 = Gpa();
-  var sub11 = Gpa();
+  var sub1 = Gpa.subjectNo('subject 1');
+  var sub2 = Gpa.subjectNo('subject 2');
+  var sub3 = Gpa.subjectNo('subject 3');
+  var sub4 = Gpa.subjectNo('subject 4');
+  var sub5 = Gpa.subjectNo('subject 5');
+  var sub6 = Gpa.subjectNo('subject 6');
+  var sub7 = Gpa.subjectNo('subject 7');
+  var sub8 = Gpa.subjectNo('subject 8');
+  var sub9 = Gpa.subjectNo('subject 9');
+  var sub10 = Gpa.subjectNo('subject 10');
+  var sub11 = Gpa.subjectNo('subject 11');
 
   @override
   Widget build(BuildContext context) {
@@ -117,7 +117,7 @@ class _Sgpa extends State<Sgpa> {
               controller: gpa.credit,
               decoration: InputDecoration(
                 hintText: "Credit",
-                labelText: 'Subject credit',
+                labelText: gpa.subjectNo,
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(5.0)),
               ),
