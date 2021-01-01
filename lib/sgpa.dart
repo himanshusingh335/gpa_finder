@@ -29,17 +29,19 @@ class _Sgpa extends State<Sgpa> {
         Card(
           child: Row(
             children: <Widget>[
-              Padding(
-                padding: EdgeInsets.only(
-                  top: 35,
-                  left: 10,
-                ),
-                child: Text(
-                  "SGPA: " + result + "\n",
-                  style: TextStyle(
-                    fontSize: 30,
-                    color: Colors.orangeAccent,
-                    fontWeight: FontWeight.bold,
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.only(
+                    top: 35,
+                    left: 10,
+                  ),
+                  child: Text(
+                    "SGPA: " + result + "\n",
+                    style: TextStyle(
+                      fontSize: 22,
+                      color: Colors.orangeAccent,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
@@ -60,6 +62,7 @@ class _Sgpa extends State<Sgpa> {
                         onPressed: () {
                           setState(() {
                             reset();
+                            FocusScope.of(context).requestFocus(FocusNode());
                           });
                         }),
                     RaisedButton(
@@ -73,6 +76,7 @@ class _Sgpa extends State<Sgpa> {
                         onPressed: () {
                           setState(() {
                             result = calculate();
+                            FocusScope.of(context).requestFocus(FocusNode());
                           });
                         }),
                   ],
@@ -141,6 +145,7 @@ class _Sgpa extends State<Sgpa> {
               onChanged: (String newValue) {
                 setState(() {
                   gpa.gradeSelected = newValue;
+                  //FocusScope.of(context).requestFocus(FocusNode());
                 });
               },
               items: <String>[
