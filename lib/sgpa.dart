@@ -145,7 +145,7 @@ class _Sgpa extends State<Sgpa> {
               onChanged: (String newValue) {
                 setState(() {
                   gpa.gradeSelected = newValue;
-                  //FocusScope.of(context).requestFocus(FocusNode());
+                  FocusScope.of(context).requestFocus(FocusNode());
                 });
               },
               items: <String>[
