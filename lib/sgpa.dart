@@ -186,9 +186,9 @@ class _Sgpa extends State<Sgpa> {
   }
 
   String calculate() {
-    List<String?> gradeof = [];
-    var creditof = [];
-    var gpoint = [];
+    List gradeof = List.filled(11, "");
+    var creditof = List.filled(11, 0);
+    var gpoint = List.filled(11, 0);
     gradeof[0] = sub1.gradeSelected;
     gradeof[1] = sub2.gradeSelected;
     gradeof[2] = sub3.gradeSelected;
