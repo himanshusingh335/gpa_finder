@@ -51,13 +51,11 @@ class _Sgpa extends State<Sgpa> {
                 ),
                 child: ButtonBar(
                   children: <Widget>[
-                    RaisedButton(
-                        color: Colors.orange,
-                        textColor: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: new BorderRadius.circular(18.0),
+                    ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.orange,
+                          onPrimary: Colors.white,
                         ),
-                        elevation: 5,
                         child: Text("RESET"),
                         onPressed: () {
                           setState(() {
@@ -65,13 +63,11 @@ class _Sgpa extends State<Sgpa> {
                             FocusScope.of(context).requestFocus(FocusNode());
                           });
                         }),
-                    RaisedButton(
-                        color: Colors.orange,
-                        textColor: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: new BorderRadius.circular(18.0),
+                    ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.orange,
+                          onPrimary: Colors.white,
                         ),
-                        elevation: 5,
                         child: Text("CALCULATE"),
                         onPressed: () {
                           setState(() {
@@ -190,9 +186,9 @@ class _Sgpa extends State<Sgpa> {
   }
 
   String calculate() {
-    var gradeof = new List(11);
-    var creditof = new List(11);
-    var gpoint = new List(11);
+    List<String> gradeof = [];
+    var creditof = [];
+    var gpoint = [];
     gradeof[0] = sub1.gradeSelected;
     gradeof[1] = sub2.gradeSelected;
     gradeof[2] = sub3.gradeSelected;
