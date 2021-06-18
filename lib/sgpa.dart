@@ -138,7 +138,7 @@ class _Sgpa extends State<Sgpa> {
               icon: Icon(Icons.arrow_drop_down),
               iconSize: 25,
               elevation: 16,
-              onChanged: (String newValue) {
+              onChanged: (String? newValue) {
                 setState(() {
                   gpa.gradeSelected = newValue;
                   FocusScope.of(context).requestFocus(FocusNode());
@@ -186,7 +186,7 @@ class _Sgpa extends State<Sgpa> {
   }
 
   String calculate() {
-    List<String> gradeof = [];
+    List<String?> gradeof = [];
     var creditof = [];
     var gpoint = [];
     gradeof[0] = sub1.gradeSelected;

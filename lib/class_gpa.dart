@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class Gpa {
   var credit = TextEditingController();
-  String gradeSelected;
-  String subjectNo;
+  String? gradeSelected;
+  String? subjectNo;
 
   void resetEachGrade() {
     credit.text = "";
