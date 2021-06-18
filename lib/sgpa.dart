@@ -51,13 +51,11 @@ class _Sgpa extends State<Sgpa> {
                 ),
                 child: ButtonBar(
                   children: <Widget>[
-                    RaisedButton(
-                        color: Colors.orange,
-                        textColor: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: new BorderRadius.circular(18.0),
+                    ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.orange,
+                          onPrimary: Colors.white,
                         ),
-                        elevation: 5,
                         child: Text("RESET"),
                         onPressed: () {
                           setState(() {
@@ -65,13 +63,11 @@ class _Sgpa extends State<Sgpa> {
                             FocusScope.of(context).requestFocus(FocusNode());
                           });
                         }),
-                    RaisedButton(
-                        color: Colors.orange,
-                        textColor: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: new BorderRadius.circular(18.0),
+                    ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.orange,
+                          onPrimary: Colors.white,
                         ),
-                        elevation: 5,
                         child: Text("CALCULATE"),
                         onPressed: () {
                           setState(() {
@@ -142,7 +138,7 @@ class _Sgpa extends State<Sgpa> {
               icon: Icon(Icons.arrow_drop_down),
               iconSize: 25,
               elevation: 16,
-              onChanged: (String newValue) {
+              onChanged: (String? newValue) {
                 setState(() {
                   gpa.gradeSelected = newValue;
                   FocusScope.of(context).requestFocus(FocusNode());
@@ -190,9 +186,9 @@ class _Sgpa extends State<Sgpa> {
   }
 
   String calculate() {
-    var gradeof = new List(11);
-    var creditof = new List(11);
-    var gpoint = new List(11);
+    List gradeof = List.filled(11, "");
+    var creditof = List.filled(11, 0);
+    var gpoint = List.filled(11, 0);
     gradeof[0] = sub1.gradeSelected;
     gradeof[1] = sub2.gradeSelected;
     gradeof[2] = sub3.gradeSelected;
