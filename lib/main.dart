@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:gpacalculator/sgpa.dart';
-import 'package:gpacalculator/webView.dart';
+import 'package:gpa_finder/sgpa.dart';
+import 'package:gpa_finder/webView.dart';
 
 void main() {
   runApp(GpaCalc());
