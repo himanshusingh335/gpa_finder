@@ -1,6 +1,6 @@
 {
     "hosting": {
-      "site": "srm-gpa-finder",
-      "public": "web"
+      "site": "gpa-finder",
+      "public": "build/web"
     }
   }
