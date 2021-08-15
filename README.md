@@ -1,7 +1,5 @@
-<br>
-<p align="left">
-# SRM GPA Finder
-</p>
+# check_my_news
+
 <p align="left">
 crafted with <span style="color: #8b0000;">&hearts;</span> by Himanshu Singh
 </p>
