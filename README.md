@@ -1,6 +1,6 @@
 <br>
 <p align="left">
-SRM GPA Finder
+#SRM GPA Finder
 </p>
 <p align="left">
 crafted with <span style="color: #8b0000;">&hearts;</span> by Himanshu Singh
