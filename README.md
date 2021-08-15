@@ -1,4 +1,4 @@
-# check_my_news
+# SRM GPA Finder
 
 <p align="left">
 crafted with <span style="color: #8b0000;">&hearts;</span> by Himanshu Singh
