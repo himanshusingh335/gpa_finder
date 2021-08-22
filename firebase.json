@@ -1,6 +1,6 @@
 {
-    "hosting": {
-      "site": "gpa-finder",
-      "public": "build/web"
-    }
+  "hosting": {
+    "site": "gpa-finder",
+    "public": "build/web"
   }
+}
