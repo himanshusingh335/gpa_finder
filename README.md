@@ -40,7 +40,12 @@ flutter run --release
 
 # Summary
 
-The app takes the credit and the grade rewarded for each subject from the user and calculates the SGPA of the student for that semester.
+This app enables students to calculate their SGPA for a semester. It will benefit those students of SRM-IST who fall under the academic regulations-2018.
+Just enter the credit and select the grade you secured for each subject to know your SGPA !
+
+Important SRM Websites such as ITKM , SRM Care, Feekart, Student information portal, Academia are just one touch away !!
+
+Easy to use interface with dark mode enabled ...
 Playstore release : https://play.google.com/store/apps/details?id=com.appEngineer.gpafinder
 The web version for the same is available on https://gpa-finder.web.app/#/
 
